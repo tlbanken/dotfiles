@@ -21,7 +21,7 @@ function get_pwd(){
 }
 
 # LAMBDA - user - [pwd]
-PROMPT='$ret_status%{$fg_bold[yellow]%}$USER %{$fg_bold[green]%}[%{$fg[white]%}$(get_pwd)$(git_prompt_info)%{$reset_color%}%{$reset_color%}%{$fg_bold[green]%}] %{$reset_color%}%{$reset_color%}'
+PROMPT='$ret_status%{$fg_bold[yellow]%}$USER %{$fg_bold[green]%}[%{$fg[blue]%}$(get_pwd)$(git_prompt_info)%{$reset_color%}%{$reset_color%}%{$fg_bold[green]%}] %{$reset_color%}%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
