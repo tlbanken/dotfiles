@@ -41,11 +41,24 @@ Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 " NERDTree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 
+" tmux-focus-events for autoupdate file changes
+Plugin 'https://github.com/tmux-plugins/vim-tmux-focus-events.git'
+
+" Better syntax highlighting
+"Plugin 'https://github.com/sheerun/vim-polyglot.git'
+Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
+
 "Palenight Theme
 Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
 
 "Papercolor theme
 Plugin 'https://github.com/NLKNguyen/papercolor-theme.git'
+
+" Jellybeans theme
+Plugin 'https://github.com/nanotech/jellybeans.vim.git'
+
+" Material Theme
+Plugin 'https://github.com/kaicataldo/material.vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,11 +87,27 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+"PaperColor Highlight
+let g:PaperColor_Theme_Options = {
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     },
+  \     'cpp': {
+  \       'highlight_standard_library': 1
+  \     },
+  \     'c': {
+  \       'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
 
-"==== Pick Colorscheme ====
+
+"==== Pick Colorscheme Options ====
 "set background=dark
-colorscheme palenight
+"colorscheme palenight
 let g:palenight_terminal_italics=1
+let g:jellybeans_use_term_italics = 1
 
 
 "==== numbering ====
@@ -91,33 +120,42 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
+"==== auto update changes in file and disable swap files ====
+set autoread
+set noswapfile
+
 
 "==== column marker ====
 set colorcolumn=80
-highlight ColorColumn guibg=lightgrey
+highlight ColorColumn guibg=black
+"let &colorcolumn="80,".join(range(81,999),",")
 
 
 "==== Highlight current line ====
-"set cursorline
+set cursorline
 
 
 "==== make bg transparent ====
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+"au ColorScheme * hi Normal ctermbg=none guibg=none
+"au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 
 "==== set color config ====
 syntax on
+syntax enable
 
-if (has("nvim"))
+"if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"endif
 
 if(has("termguicolors"))
 	set termguicolors
 endif
 
+
+"==== Java Function highlighting ====
+let java_highlight_functions = 1
 
 "==== Set up Leader key ====
 let mapleader = "\<Space>"
@@ -125,6 +163,8 @@ let mapleader = "\<Space>"
 
 "==== Simple Leader Key Remaps ====
 nmap <leader>s :noh<CR>
+nmap <leader>n :NERDTree<CR>
+nmap <leader>w :w<CR>
 nmap <leader>h 0
 nmap <leader>l $
 
@@ -136,6 +176,8 @@ nmap <silent> <A-j> :wincmd j<CR>
 nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
+:nnoremap <C-l> :bnext<CR>
+:nnoremap <C-h> :bprevious<CR>
 
 "==== Status line ====
 set laststatus=2
@@ -157,3 +199,7 @@ filetype plugin on
 set encoding=utf8
 set showcmd
 set wildmenu
+
+"==== Colorscheme ====
+colorscheme PaperColor
+
