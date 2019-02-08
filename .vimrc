@@ -48,6 +48,9 @@ Plugin 'https://github.com/tmux-plugins/vim-tmux-focus-events.git'
 "Plugin 'https://github.com/sheerun/vim-polyglot.git'
 Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
+" Easy commenting commands
+Plugin 'https://github.com/tpope/vim-commentary.git'
+
 "Palenight Theme
 Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
 
@@ -167,6 +170,11 @@ nmap <leader>n :NERDTree<CR>
 nmap <leader>w :w<CR>
 nmap <leader>h 0
 nmap <leader>l $
+nmap <leader>= :set background=light<CR>
+nmap <leader>- :set background=dark<CR>
+" Move by screen lines rather than true lines
+:noremap j gj
+:noremap k gk
 
 
 "==== Other key remaps ====
