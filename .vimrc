@@ -28,7 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
 " Auto Completion with deoplete
-if has('nvim')
+if (has("nvim"))
 	Plugin 'https://github.com/Shougo/deoplete.nvim.git'
 endif
 
@@ -62,6 +62,12 @@ Plugin 'https://github.com/nanotech/jellybeans.vim.git'
 
 " Material Theme
 Plugin 'https://github.com/kaicataldo/material.vim.git'
+
+" Summerfruit256
+Plugin 'https://github.com/baeuml/summerfruit256.vim.git'
+
+" Ayu-theme
+Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -122,6 +128,7 @@ set relativenumber
 set smartindent
 set tabstop=4
 set shiftwidth=4
+autocmd FileType asm setlocal shiftwidth=8 tabstop=8
 
 "==== auto update changes in file and disable swap files ====
 set autoread
@@ -172,6 +179,13 @@ nmap <leader>h 0
 nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
+nmap <leader>1 :colorscheme PaperColor<CR>
+nmap <leader>2 :colorscheme summerfruit256<CR>
+nmap <leader>3 :colorscheme palenight<CR>
+nmap <leader>4 :colorscheme material<CR>
+nmap <leader>5 :colorscheme ayu<CR>
+nmap <leader>t :au ColorScheme * hi Normal ctermbg=none guibg=none<CR>
+
 " Move by screen lines rather than true lines
 :noremap j gj
 :noremap k gk
@@ -210,4 +224,3 @@ set wildmenu
 
 "==== Colorscheme ====
 colorscheme PaperColor
-
