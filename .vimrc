@@ -69,6 +69,9 @@ Plugin 'https://github.com/baeuml/summerfruit256.vim.git'
 " Ayu-theme
 Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 
+" Rusticated Theme
+Plugin 'https://github.com/nightsense/rusticated.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -113,7 +116,7 @@ let g:PaperColor_Theme_Options = {
 
 
 "==== Pick Colorscheme Options ====
-"set background=dark
+set background=dark
 "colorscheme palenight
 let g:palenight_terminal_italics=1
 let g:jellybeans_use_term_italics = 1
@@ -184,6 +187,7 @@ nmap <leader>2 :colorscheme summerfruit256<CR>
 nmap <leader>3 :colorscheme palenight<CR>
 nmap <leader>4 :colorscheme material<CR>
 nmap <leader>5 :colorscheme ayu<CR>
+nmap <leader>6 :colorscheme rusticated<CR>
 nmap <leader>t :au ColorScheme * hi Normal ctermbg=none guibg=none<CR>
 
 " Move by screen lines rather than true lines
@@ -215,6 +219,9 @@ set hlsearch
 set complete=.,w,b,u,t,i
 set showcmd
 
+"==== Backup files to tmp ====
+set backupdir-=.
+set backupdir^=~/tmp,/tmp
 
 "==== Misc ====
 filetype plugin on
