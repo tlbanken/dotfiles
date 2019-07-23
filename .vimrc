@@ -5,14 +5,6 @@
 "====================================
 
 
-
-"TODO: Plugin plans
-"	- vundle/vim-plug
-"	- autocomplete with deoplete
-"	- Auto Pairs for autoclose parentheses
-"	- NERDTree
-"	- airline (statusline)
-
 "==== PLUGINS FROM VUNDLE ====
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -38,18 +30,15 @@ Plugin 'https://github.com/vim-airline/vim-airline.git'
 " Auto Close {} w/ Auto Pairs
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
-" NERDTree
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-
-" tmux-focus-events for autoupdate file changes
-Plugin 'https://github.com/tmux-plugins/vim-tmux-focus-events.git'
-
 " Better syntax highlighting
 "Plugin 'https://github.com/sheerun/vim-polyglot.git'
 Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
 " Easy commenting commands
 Plugin 'https://github.com/tpope/vim-commentary.git'
+
+" Ctrl-P fuzzy finder
+Plugin 'https://github.com/kien/ctrlp.vim.git'
 
 "Palenight Theme
 Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
@@ -71,6 +60,16 @@ Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 
 " Rusticated Theme
 Plugin 'https://github.com/nightsense/rusticated.git'
+
+" One Dark Theme
+Plugin 'https://github.com/joshdick/onedark.vim.git'
+
+" Half Light Theme
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+
+" Oceanic Next Theme
+Plugin 'https://github.com/mhartington/oceanic-next.git'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -94,11 +93,6 @@ let g:deoplete#enable_at_startup = 1
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
-
-" NERDTree Stuff
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 "PaperColor Highlight
 let g:PaperColor_Theme_Options = {
   \   'language': {
@@ -116,15 +110,16 @@ let g:PaperColor_Theme_Options = {
 
 
 "==== Pick Colorscheme Options ====
-set background=dark
+" set background=dark
 "colorscheme palenight
 let g:palenight_terminal_italics=1
 let g:jellybeans_use_term_italics = 1
+let g:material_terminal_italics = 1
 
 
 "==== numbering ====
 set number
-set relativenumber
+" set relativenumber
 
 
 "==== indent ====
@@ -145,13 +140,14 @@ highlight ColorColumn guibg=black
 
 
 "==== Highlight current line ====
-set cursorline
+" set cursorline
 
 
 "==== make bg transparent ====
-"au ColorScheme * hi Normal ctermbg=none guibg=none
-"au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
-
+" au ColorScheme * hi Normal ctermbg=none guibg=none
+" au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
 
 "==== set color config ====
 syntax on
@@ -188,12 +184,25 @@ nmap <leader>3 :colorscheme palenight<CR>
 nmap <leader>4 :colorscheme material<CR>
 nmap <leader>5 :colorscheme ayu<CR>
 nmap <leader>6 :colorscheme rusticated<CR>
-nmap <leader>t :au ColorScheme * hi Normal ctermbg=none guibg=none<CR>
+nmap <leader>7 :colorscheme onedark<CR>
+nmap <leader>j :m+<CR>
+nmap <leader>k :m-2<CR>
+
 
 " Move by screen lines rather than true lines
 :noremap j gj
 :noremap k gk
 
+
+" ==== Fix Alt-key ====
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
 
 "==== Other key remaps ====
 " Remap window change switching
@@ -204,6 +213,16 @@ nmap <silent> <A-l> :wincmd l<CR>
 
 :nnoremap <C-l> :bnext<CR>
 :nnoremap <C-h> :bprevious<CR>
+:nnoremap <leader>bd :bdelete<CR>
+
+:nnoremap <leader>v :vsplit<CR>
+
+"==== ctrl-p ====
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+
 
 "==== Status line ====
 set laststatus=2
@@ -214,6 +233,11 @@ set smartcase
 set incsearch
 set hlsearch
 
+"==== Folds ====
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 "==== Basic Auto Complete ====
 set complete=.,w,b,u,t,i
@@ -223,6 +247,9 @@ set showcmd
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
 
+"==== Mouse Support ====
+set mouse=a
+
 "==== Misc ====
 filetype plugin on
 set encoding=utf8
@@ -230,4 +257,24 @@ set showcmd
 set wildmenu
 
 "==== Colorscheme ====
-colorscheme PaperColor
+" let g:material_theme_style = 'dark'
+" colorscheme onedark
+colorscheme material
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+
+
+"**** FUNCTIONS ****
+
+"==== Toggle Transparent Background ====
+let t:is_transparent = 1
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <leader>t : call Toggle_transparent()<CR>
