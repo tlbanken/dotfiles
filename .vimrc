@@ -40,7 +40,17 @@ Plugin 'https://github.com/tpope/vim-commentary.git'
 " Ctrl-P fuzzy finder
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 
-"Palenight Theme
+" Remember last line edited
+Plugin 'https://github.com/farmergreg/vim-lastplace.git'
+
+" Git Gutter
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
+
+" Sleuth.vim for auto tab/space recognition
+Plugin 'https://github.com/tpope/vim-sleuth.git'
+
+" ++++++++++ THEMES +++++++++++
+" Palenight Theme
 Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
 
 "Papercolor theme
@@ -69,6 +79,9 @@ Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 " Oceanic Next Theme
 Plugin 'https://github.com/mhartington/oceanic-next.git'
+
+" Gruvbox Theme
+Plugin 'https://github.com/morhetz/gruvbox.git'
 
 
 call vundle#end()            " required
@@ -110,7 +123,7 @@ let g:PaperColor_Theme_Options = {
 
 
 "==== Pick Colorscheme Options ====
-" set background=dark
+set background=dark
 "colorscheme palenight
 let g:palenight_terminal_italics=1
 let g:jellybeans_use_term_italics = 1
@@ -120,7 +133,6 @@ let g:material_terminal_italics = 1
 "==== numbering ====
 set number
 " set relativenumber
-
 
 "==== indent ====
 set smartindent
@@ -132,10 +144,12 @@ autocmd FileType asm setlocal shiftwidth=8 tabstop=8
 set autoread
 set noswapfile
 
+"=== Auto set wrk dir to curr dir
+set autochdir
 
 "==== column marker ====
-set colorcolumn=80
-highlight ColorColumn guibg=black
+" set colorcolumn=80
+" highlight ColorColumn guibg=black
 "let &colorcolumn="80,".join(range(81,999),",")
 
 
@@ -179,11 +193,11 @@ nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme PaperColor<CR>
-nmap <leader>2 :colorscheme summerfruit256<CR>
+nmap <leader>2 :colorscheme gruvbox<CR>
 nmap <leader>3 :colorscheme palenight<CR>
 nmap <leader>4 :colorscheme material<CR>
 nmap <leader>5 :colorscheme ayu<CR>
-nmap <leader>6 :colorscheme rusticated<CR>
+nmap <leader>6 :colorscheme OceanicNext<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>j :m+<CR>
 nmap <leader>k :m-2<CR>
@@ -258,23 +272,24 @@ set wildmenu
 
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
-" colorscheme onedark
-colorscheme material
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
+" set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
+colorscheme OceanicNext
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
 
 
 "**** FUNCTIONS ****
 
 "==== Toggle Transparent Background ====
-let t:is_transparent = 1
-function! Toggle_transparent()
-    if t:is_transparent == 0
-        hi Normal guibg=NONE ctermbg=NONE
-        let t:is_transparent = 1
-    else
-        set background=dark
-        let t:is_tranparent = 0
-    endif
-endfunction
-nnoremap <leader>t : call Toggle_transparent()<CR>
+" let t:is_transparent = 1
+" function! Toggle_transparent()
+"     if t:is_transparent == 0
+"         hi Normal guibg=NONE ctermbg=NONE
+"         let t:is_transparent = 1
+"     else
+"         set background=dark
+"         let t:is_tranparent = 0
+"     endif
+" endfunction
+" nnoremap <leader>t : call Toggle_transparent()<CR>
