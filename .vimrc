@@ -74,6 +74,9 @@ Plugin 'https://github.com/nightsense/rusticated.git'
 " One Dark Theme
 Plugin 'https://github.com/joshdick/onedark.vim.git'
 
+" Snow
+Plugin 'https://github.com/nightsense/snow.git'
+
 " Half Light Theme
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
@@ -128,6 +131,7 @@ set background=dark
 let g:palenight_terminal_italics=1
 let g:jellybeans_use_term_italics = 1
 let g:material_terminal_italics = 1
+set t_md=
 
 
 "==== numbering ====
@@ -186,7 +190,6 @@ let mapleader = "\<Space>"
 
 "==== Simple Leader Key Remaps ====
 nmap <leader>s :noh<CR>
-nmap <leader>n :NERDTree<CR>
 nmap <leader>w :w<CR>
 nmap <leader>h 0
 nmap <leader>l $
@@ -274,7 +277,7 @@ set wildmenu
 " let g:material_theme_style = 'dark'
 " set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme OceanicNext
+colorscheme snow
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
