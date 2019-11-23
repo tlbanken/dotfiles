@@ -131,6 +131,8 @@ set background=dark
 let g:palenight_terminal_italics=1
 let g:jellybeans_use_term_italics = 1
 let g:material_terminal_italics = 1
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 set t_md=
 
 
@@ -273,11 +275,14 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
+"==== Airline Theme ====
+let g:airline_theme='oceanicnext'
+
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
 " set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme snow
+colorscheme OceanicNext
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
