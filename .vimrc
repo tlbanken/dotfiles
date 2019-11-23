@@ -246,6 +246,8 @@ let g:ctrlp_working_path_mode = 'ra'
 "==== Status line ====
 set laststatus=2
 
+" === Line Wrapping ===
+set showbreak =>>
 
 "==== Search ====
 set smartcase
