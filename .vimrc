@@ -86,6 +86,8 @@ Plugin 'https://github.com/mhartington/oceanic-next.git'
 " Gruvbox Theme
 Plugin 'https://github.com/morhetz/gruvbox.git'
 
+" Solarized Theme
+Plugin 'https://github.com/lifepillar/vim-solarized8.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -282,9 +284,9 @@ let g:airline_theme='oceanicnext'
 
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
-" set background=dark
+set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme OceanicNext
+colorscheme solarized8_flat
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
