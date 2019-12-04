@@ -286,7 +286,7 @@ let g:airline_theme='oceanicnext'
 " let g:material_theme_style = 'dark'
 set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme solarized8_flat
+colorscheme rusticated
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 

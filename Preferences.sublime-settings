@@ -1,0 +1,20 @@
+{
+	"always_show_minimap_viewport": true,
+	"caret_style": "blink",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"font_face": "Hack",
+	"font_size": 11,
+	"highlight_line": false,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+	],
+	"line_padding_bottom": 3,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80
+	],
+	"tab_completion": false,
+	"theme": "Adaptive.sublime-theme"
+}
