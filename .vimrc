@@ -199,12 +199,12 @@ nmap <leader>h 0
 nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
-nmap <leader>1 :colorscheme PaperColor<CR>
+nmap <leader>1 :colorscheme OceanicNext<CR>
 nmap <leader>2 :colorscheme gruvbox<CR>
-nmap <leader>3 :colorscheme palenight<CR>
+nmap <leader>3 :colorscheme rusticated<CR>
 nmap <leader>4 :colorscheme material<CR>
-nmap <leader>5 :colorscheme ayu<CR>
-nmap <leader>6 :colorscheme OceanicNext<CR>
+nmap <leader>5 :colorscheme solarized8<CR>
+nmap <leader>6 :colorscheme PaperColor<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>j :m+<CR>
 nmap <leader>k :m-2<CR>
@@ -244,6 +244,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 
+" === diff since last save ===
+:nnoremap <leader>df :w !diff % -<CR>
 
 "==== Status line ====
 set laststatus=2
@@ -279,6 +281,11 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
+" === GUI Stuff ===
+if has('gui running')
+  set guifont=Source\ Code\ Pro\ Medium\ 13
+endif
+
 "==== Airline Theme ====
 let g:airline_theme='oceanicnext'
 
@@ -286,7 +293,7 @@ let g:airline_theme='oceanicnext'
 " let g:material_theme_style = 'dark'
 set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme rusticated
+colorscheme OceanicNext
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
