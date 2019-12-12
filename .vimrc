@@ -247,6 +247,10 @@ let g:ctrlp_working_path_mode = 'ra'
 " === diff since last save ===
 :nnoremap <leader>df :w !diff % -<CR>
 
+" === hex mode ===
+:nnoremap <leader>x :%!xxd<CR>
+:nnoremap <leader>X :%!xxd -r<CR>
+
 "==== Status line ====
 set laststatus=2
 
