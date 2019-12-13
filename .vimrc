@@ -312,7 +312,7 @@ let g:airline_theme='onedark'
 " let g:material_theme_style = 'dark'
 set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme hybrid
+colorscheme OceanicNext
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
