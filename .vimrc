@@ -20,9 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
 " Auto Completion with deoplete
-if (has("nvim"))
-	Plugin 'https://github.com/Shougo/deoplete.nvim.git'
-endif
+" Plugin 'https://github.com/Shougo/deoplete.nvim.git'
 
 " Airline
 Plugin 'https://github.com/vim-airline/vim-airline.git'
@@ -88,6 +86,9 @@ Plugin 'https://github.com/morhetz/gruvbox.git'
 
 " Solarized Theme
 Plugin 'https://github.com/lifepillar/vim-solarized8.git'
+
+" Hybrid Theme
+Plugin 'https://github.com/w0ng/vim-hybrid.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -162,8 +163,18 @@ set autochdir
 
 
 "==== Highlight current line ====
-" set cursorline
+set cursorline
 
+" === Highlight current line number ===
+hi clear CursorLine
+augroup CLClear
+    autocmd! ColorScheme * hi clear CursorLine
+augroup END
+
+hi CursorLineNR cterm=bold
+augroup CLNRSet
+    autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
 
 "==== make bg transparent ====
 " au ColorScheme * hi Normal ctermbg=none guibg=none
@@ -200,12 +211,13 @@ nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme OceanicNext<CR>
-nmap <leader>2 :colorscheme gruvbox<CR>
+nmap <leader>2 :colorscheme hybrid<CR>
 nmap <leader>3 :colorscheme rusticated<CR>
 nmap <leader>4 :colorscheme material<CR>
 nmap <leader>5 :colorscheme solarized8<CR>
 nmap <leader>6 :colorscheme PaperColor<CR>
 nmap <leader>7 :colorscheme onedark<CR>
+nmap <leader>8 :colorscheme gruvbox<CR>
 nmap <leader>j :m+<CR>
 nmap <leader>k :m-2<CR>
 
@@ -248,8 +260,14 @@ let g:ctrlp_working_path_mode = 'ra'
 :nnoremap <leader>df :w !diff % -<CR>
 
 " === hex mode ===
-:nnoremap <leader>x :%!xxd<CR>
-:nnoremap <leader>X :%!xxd -r<CR>
+:nnoremap <leader>x :!hexdump -C % \| less<CR>
+
+" === File Explore ===
+:nnoremap <leader>e :Explore!<CR>
+
+" === Terminal ===
+:nnoremap <leader>t :bot ter ++rows=15<CR>
+tnoremap <F1> <C-W>N
 
 "==== Status line ====
 set laststatus=2
@@ -285,19 +303,16 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
-" === GUI Stuff ===
-if has('gui running')
-  set guifont=Source\ Code\ Pro\ Medium\ 13
-endif
 
 "==== Airline Theme ====
-let g:airline_theme='oceanicnext'
+let g:airline_theme='onedark'
+" let g:airline_theme='rusticated'
 
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
 set background=dark
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme OceanicNext
+colorscheme hybrid
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
