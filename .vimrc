@@ -266,8 +266,10 @@ let g:ctrlp_working_path_mode = 'ra'
 :nnoremap <leader>e :Explore!<CR>
 
 " === Terminal ===
-:nnoremap <leader>t :bot ter ++rows=15<CR>
-tnoremap <F1> <C-W>N
+if has('terminal')
+  :nnoremap <leader>t :bot ter ++rows=15<CR>
+  tnoremap <F1> <C-W>N
+endif
 
 "==== Status line ====
 set laststatus=2
