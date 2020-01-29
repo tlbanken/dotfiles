@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"caret_style": "blink",
-	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"font_face": "Source Code Pro Medium",
 	"font_size": 12,
 	"highlight_line": false,
@@ -16,5 +16,6 @@
 		80
 	],
 	"tab_completion": false,
-	"theme": "Adaptive.sublime-theme"
+	"theme": "Adaptive.sublime-theme",
+	"inverse_caret_state": true,
 }

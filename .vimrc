@@ -20,7 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
 " Auto Completion with deoplete
-" Plugin 'https://github.com/Shougo/deoplete.nvim.git'
+"Plugin 'https://github.com/Shougo/deoplete.nvim.git'
 
 " Airline
 Plugin 'https://github.com/vim-airline/vim-airline.git'
@@ -89,6 +89,9 @@ Plugin 'https://github.com/lifepillar/vim-solarized8.git'
 
 " Hybrid Theme
 Plugin 'https://github.com/w0ng/vim-hybrid.git'
+
+" Night Owl Theme
+Plugin 'https://github.com/haishanh/night-owl.vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -213,11 +216,14 @@ nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme OceanicNext<CR>
 nmap <leader>2 :colorscheme hybrid<CR>
 nmap <leader>3 :colorscheme rusticated<CR>
-nmap <leader>4 :colorscheme material<CR>
+nmap <leader>4 :colorscheme night-owl<CR>
 nmap <leader>5 :colorscheme solarized8<CR>
 nmap <leader>6 :colorscheme PaperColor<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>8 :colorscheme gruvbox<CR>
+nmap <leader>9 :colorscheme snow<CR>
+nmap <leader>0 :syntax off<CR>
+nmap <leader>) :syntax on<CR>
 nmap <leader>j :m+<CR>
 nmap <leader>k :m-2<CR>
 
@@ -228,14 +234,16 @@ nmap <leader>k :m-2<CR>
 
 
 " ==== Fix Alt-key ====
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+if !has('nvim')
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
 
-set timeout ttimeoutlen=50
+  set timeout ttimeoutlen=50
+endif
 
 "==== Other key remaps ====
 " Remap window change switching
@@ -310,11 +318,16 @@ set wildmenu
 let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
 
+let g:jellybeans_overrides = {
+\	'Function': {'guifg': '669cb0'}
+\}
+
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
 set background=dark
+" let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme OceanicNext
+colorscheme night-owl
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
