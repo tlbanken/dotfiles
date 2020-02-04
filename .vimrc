@@ -93,6 +93,9 @@ Plugin 'https://github.com/w0ng/vim-hybrid.git'
 " Night Owl Theme
 Plugin 'https://github.com/haishanh/night-owl.vim.git'
 
+" Base16 Colors BIG BOI
+Plugin 'https://github.com/chriskempson/base16-vim.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -214,11 +217,11 @@ nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme OceanicNext<CR>
-nmap <leader>2 :colorscheme hybrid<CR>
+nmap <leader>2 :colorscheme base16-atelier-savanna<CR>
 nmap <leader>3 :colorscheme rusticated<CR>
-nmap <leader>4 :colorscheme night-owl<CR>
-nmap <leader>5 :colorscheme solarized8<CR>
-nmap <leader>6 :colorscheme PaperColor<CR>
+nmap <leader>4 :colorscheme base16-atelier-savanna-light<CR>
+nmap <leader>5 :colorscheme hybrid<CR>
+nmap <leader>6 :colorscheme night-owl<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>8 :colorscheme gruvbox<CR>
 nmap <leader>9 :colorscheme snow<CR>
@@ -327,7 +330,7 @@ let g:jellybeans_overrides = {
 set background=dark
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme night-owl
+colorscheme base16-atelier-savanna
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
