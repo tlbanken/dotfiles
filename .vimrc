@@ -47,6 +47,9 @@ Plugin 'https://github.com/airblade/vim-gitgutter.git'
 " Sleuth.vim for auto tab/space recognition
 Plugin 'https://github.com/tpope/vim-sleuth.git'
 
+" Tagbar
+Plugin 'https://github.com/majutsushi/tagbar.git'
+
 " ++++++++++ THEMES +++++++++++
 " Palenight Theme
 Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
@@ -93,8 +96,11 @@ Plugin 'https://github.com/w0ng/vim-hybrid.git'
 " Night Owl Theme
 Plugin 'https://github.com/haishanh/night-owl.vim.git'
 
-" Base16 Colors BIG BOI
-Plugin 'https://github.com/chriskempson/base16-vim.git'
+" Pencil Theme
+Plugin 'https://github.com/reedes/vim-colors-pencil.git'
+
+" Seoul256 Theme
+Plugin 'https://github.com/junegunn/seoul256.vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -217,11 +223,11 @@ nmap <leader>l $
 nmap <leader>= :set background=light<CR>
 nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme OceanicNext<CR>
-nmap <leader>2 :colorscheme base16-atelier-savanna<CR>
+nmap <leader>2 :colorscheme night-owl<CR>
 nmap <leader>3 :colorscheme rusticated<CR>
-nmap <leader>4 :colorscheme base16-atelier-savanna-light<CR>
+nmap <leader>4 :colorscheme pencil<CR>
 nmap <leader>5 :colorscheme hybrid<CR>
-nmap <leader>6 :colorscheme night-owl<CR>
+nmap <leader>6 :colorscheme ayu<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>8 :colorscheme gruvbox<CR>
 nmap <leader>9 :colorscheme snow<CR>
@@ -266,6 +272,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+"==== Tagbar ====
+nmap <leader>] :TagbarToggle<CR>
 
 " === diff since last save ===
 :nnoremap <leader>df :w !diff % -<CR>
@@ -318,8 +326,9 @@ set wildmenu
 
 
 "==== Airline Theme ====
-let g:airline_theme='onedark'
-" let g:airline_theme='rusticated'
+" let g:airline_theme='onedark'
+let g:airline_theme='rusticated'
+" let g:airline_theme='pencil'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -327,10 +336,10 @@ let g:jellybeans_overrides = {
 
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
-set background=dark
+set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme base16-atelier-savanna
+colorscheme rusticated
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
