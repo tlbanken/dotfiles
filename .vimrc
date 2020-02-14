@@ -99,8 +99,8 @@ Plugin 'https://github.com/haishanh/night-owl.vim.git'
 " Pencil Theme
 Plugin 'https://github.com/reedes/vim-colors-pencil.git'
 
-" Seoul256 Theme
-Plugin 'https://github.com/junegunn/seoul256.vim.git'
+" Vim-colors-plain
+Plugin 'https://github.com/andreypopp/vim-colors-plain.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -327,8 +327,8 @@ set wildmenu
 
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
-let g:airline_theme='rusticated'
-" let g:airline_theme='pencil'
+" let g:airline_theme='rusticated'
+let g:airline_theme='pencil'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -339,7 +339,7 @@ let g:jellybeans_overrides = {
 set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme rusticated
+colorscheme plain
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
