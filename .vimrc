@@ -297,7 +297,9 @@ if has('terminal')
 endif
 
 " === Whitespace ===
-:set listchars+=space:␣,tab:>-
+if has('listchars')
+  set listchars+=space:␣,tab=>-
+endif
 nmap <leader>/ :set list!<CR>
 
 "==== Status line ====
