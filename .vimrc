@@ -284,6 +284,9 @@ nmap <leader>] :TagbarToggle<CR>
 " === File Explore ===
 :nnoremap <leader>e :Explore!<CR>
 
+" === Clipboard ===
+set clipboard=unnamedplus
+
 " === Terminal ===
 if has('terminal')
   :nnoremap <leader>t :bot ter ++rows=15<CR>
@@ -327,8 +330,8 @@ set wildmenu
 
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
-" let g:airline_theme='rusticated'
-let g:airline_theme='pencil'
+let g:airline_theme='rusticated'
+" let g:airline_theme='pencil'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -339,7 +342,7 @@ let g:jellybeans_overrides = {
 set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme plain
+colorscheme rusticated
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
