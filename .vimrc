@@ -102,6 +102,9 @@ Plugin 'https://github.com/reedes/vim-colors-pencil.git'
 " Vim-colors-plain
 Plugin 'https://github.com/andreypopp/vim-colors-plain.git'
 
+" Nord Theme
+Plugin 'https://github.com/arcticicestudio/nord-vim.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -293,6 +296,10 @@ if has('terminal')
   tnoremap <F1> <C-W>N
 endif
 
+" === Whitespace ===
+:set listchars+=space:␣,tab:>-
+nmap <leader>/ :set list!<CR>
+
 "==== Status line ====
 set laststatus=2
 
@@ -330,8 +337,9 @@ set wildmenu
 
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
-let g:airline_theme='rusticated'
+" let g:airline_theme='rusticated'
 " let g:airline_theme='pencil'
+let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -342,7 +350,7 @@ let g:jellybeans_overrides = {
 set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme rusticated
+colorscheme nord
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 
