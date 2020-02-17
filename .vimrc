@@ -181,21 +181,21 @@ set autochdir
 set cursorline
 
 " === Highlight current line number ===
-hi clear CursorLine
-augroup CLClear
-    autocmd! ColorScheme * hi clear CursorLine
-augroup END
+ hi clear CursorLine
+ augroup CLClear
+     autocmd! ColorScheme * hi clear CursorLine
+ augroup END
 
-hi CursorLineNR cterm=bold
-augroup CLNRSet
-    autocmd! ColorScheme * hi CursorLineNR cterm=bold
-augroup END
+ hi CursorLineNR cterm=bold
+ augroup CLNRSet
+     autocmd! ColorScheme * hi CursorLineNR cterm=bold
+ augroup END
 
-"==== make bg transparent ====
-" au ColorScheme * hi Normal ctermbg=none guibg=none
-" au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
-" hi! Normal ctermbg=NONE guibg=NONE
-" hi! NonText ctermbg=NONE guibg=NONE
+" ==== make bg transparent ====
+ " au ColorScheme * hi Normal ctermbg=none guibg=none
+ " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+ " hi! Normal ctermbg=NONE guibg=NONE
+ " hi! NonText ctermbg=NONE guibg=NONE
 
 "==== set color config ====
 syntax on
@@ -343,8 +343,8 @@ set wildmenu
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
-" let g:airline_theme='pencil'
-let g:airline_theme='nord'
+let g:airline_theme='pencil'
+" let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -355,9 +355,10 @@ let g:jellybeans_overrides = {
 set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme nord
-" hi! Normal ctermbg=NONE guibg=NONE
-" hi! NonText ctermbg=NONE guibg=NONE
+colorscheme rusticated
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+hi! LineNr guibg=NONE ctermbg=NONE
 
 
 "**** FUNCTIONS ****
