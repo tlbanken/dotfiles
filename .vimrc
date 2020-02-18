@@ -343,8 +343,8 @@ set wildmenu
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
-let g:airline_theme='pencil'
-" let g:airline_theme='nord'
+" let g:airline_theme='pencil'
+let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -355,10 +355,10 @@ let g:jellybeans_overrides = {
 set background=light
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme rusticated
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-hi! LineNr guibg=NONE ctermbg=NONE
+colorscheme nord
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
+" hi! LineNr guibg=NONE ctermbg=NONE
 
 
 "**** FUNCTIONS ****
