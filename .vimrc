@@ -164,6 +164,9 @@ set tabstop=4
 set shiftwidth=4
 autocmd FileType asm setlocal shiftwidth=8 tabstop=8
 
+"==== Weird Backspace Bug Fix ====
+set backspace=indent,eol,start
+
 "==== auto update changes in file and disable swap files ====
 set autoread
 set noswapfile
@@ -343,8 +346,8 @@ set wildmenu
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
-" let g:airline_theme='pencil'
-let g:airline_theme='nord'
+let g:airline_theme='pencil'
+" let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -352,10 +355,10 @@ let g:jellybeans_overrides = {
 
 "==== Colorscheme ====
 " let g:material_theme_style = 'dark'
-set background=light
+set background=dark
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme nord
+colorscheme rusticated
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 " hi! LineNr guibg=NONE ctermbg=NONE
