@@ -303,6 +303,24 @@ if has('terminal')
   tnoremap <F1> <C-W>N
 endif
 
+" === Auto hide Terminal ===
+:nmap <C-j> :call QuickHide()<CR>
+:tmap <C-j> <C-W>:call QuickHide()<CR>
+let g:quick_hidden = 0
+function! QuickHide()
+  if g:quick_hidden
+    unhide
+    let g:quick_hidden = 0
+    " switch to terminal window on opening
+    execute g:quickhide_return_to_window . "wincmd w"
+  else
+    " remember terminal window
+    let g:quickhide_return_to_window = winnr()
+    hide
+    let g:quick_hidden = 1
+  endif
+endfunction
+
 " === Cursor Shape ===
 " NOTE: This only works for konsole
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
