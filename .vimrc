@@ -105,6 +105,9 @@ Plugin 'https://github.com/andreypopp/vim-colors-plain.git'
 " Nord Theme
 Plugin 'https://github.com/arcticicestudio/nord-vim.git'
 
+" Base16 -- Here we go again :/
+Plugin 'https://github.com/chriskempson/base16-vim.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -236,7 +239,8 @@ nmap <leader>5 :colorscheme hybrid<CR>
 nmap <leader>6 :colorscheme ayu<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>8 :colorscheme gruvbox<CR>
-nmap <leader>9 :colorscheme snow<CR>
+nmap <leader>9 :colorscheme base16-grayscale-dark<CR>
+nmap <leader>( :colorscheme base16-grayscale-light<CR>
 nmap <leader>0 :syntax off<CR>
 nmap <leader>) :syntax on<CR>
 nmap <leader>j :m+<CR>
@@ -346,8 +350,8 @@ set wildmenu
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
-" let g:airline_theme='pencil'
-let g:airline_theme='nord'
+let g:airline_theme='pencil'
+" let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
 \	'Function': {'guifg': '669cb0'}
@@ -358,23 +362,9 @@ let g:jellybeans_overrides = {
 set background=dark
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme nord
+colorscheme base16-grayscale-dark
+
+" ==== Use terminal colors ====
 " hi! Normal ctermbg=NONE guibg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE
 " hi! LineNr guibg=NONE ctermbg=NONE
-
-
-"**** FUNCTIONS ****
-
-"==== Toggle Transparent Background ====
-" let t:is_transparent = 1
-" function! Toggle_transparent()
-"     if t:is_transparent == 0
-"         hi Normal guibg=NONE ctermbg=NONE
-"         let t:is_transparent = 1
-"     else
-"         set background=dark
-"         let t:is_tranparent = 0
-"     endif
-" endfunction
-" nnoremap <leader>t : call Toggle_transparent()<CR>
