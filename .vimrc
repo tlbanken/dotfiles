@@ -105,9 +105,6 @@ Plugin 'https://github.com/andreypopp/vim-colors-plain.git'
 " Nord Theme
 Plugin 'https://github.com/arcticicestudio/nord-vim.git'
 
-" Base16 -- Here we go again :/
-Plugin 'https://github.com/chriskempson/base16-vim.git'
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -368,7 +365,7 @@ set wildmenu
 "==== Airline Theme ====
 " let g:airline_theme='onedark'
 " let g:airline_theme='rusticated'
-let g:airline_theme='pencil'
+" let g:airline_theme='pencil'
 " let g:airline_theme='nord'
 
 let g:jellybeans_overrides = {
@@ -380,7 +377,7 @@ let g:jellybeans_overrides = {
 set background=dark
 " let ayucolor="dark"
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme base16-grayscale-dark
+colorscheme night-owl
 
 " ==== Use terminal colors ====
 " hi! Normal ctermbg=NONE guibg=NONE
