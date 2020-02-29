@@ -23,14 +23,13 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'https://github.com/Shougo/deoplete.nvim.git'
 
 " Airline
-Plugin 'https://github.com/vim-airline/vim-airline.git'
+" Plugin 'https://github.com/vim-airline/vim-airline.git'
 
 " Auto Close {} w/ Auto Pairs
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
 " Better syntax highlighting
-"Plugin 'https://github.com/sheerun/vim-polyglot.git'
-Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
+" Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
 " Easy commenting commands
 Plugin 'https://github.com/tpope/vim-commentary.git'
@@ -51,35 +50,11 @@ Plugin 'https://github.com/tpope/vim-sleuth.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
 
 " ++++++++++ THEMES +++++++++++
-" Palenight Theme
-Plugin 'https://github.com/drewtempelmeyer/palenight.vim.git'
-
-"Papercolor theme
-Plugin 'https://github.com/NLKNguyen/papercolor-theme.git'
-
-" Jellybeans theme
-Plugin 'https://github.com/nanotech/jellybeans.vim.git'
-
-" Material Theme
-Plugin 'https://github.com/kaicataldo/material.vim.git'
-
-" Summerfruit256
-Plugin 'https://github.com/baeuml/summerfruit256.vim.git'
-
-" Ayu-theme
-Plugin 'https://github.com/ayu-theme/ayu-vim.git'
-
 " Rusticated Theme
 Plugin 'https://github.com/nightsense/rusticated.git'
 
-" One Dark Theme
-Plugin 'https://github.com/joshdick/onedark.vim.git'
-
 " Snow
 Plugin 'https://github.com/nightsense/snow.git'
-
-" Half Light Theme
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 " Oceanic Next Theme
 Plugin 'https://github.com/mhartington/oceanic-next.git'
@@ -95,12 +70,6 @@ Plugin 'https://github.com/w0ng/vim-hybrid.git'
 
 " Night Owl Theme
 Plugin 'https://github.com/haishanh/night-owl.vim.git'
-
-" Pencil Theme
-Plugin 'https://github.com/reedes/vim-colors-pencil.git'
-
-" Vim-colors-plain
-Plugin 'https://github.com/andreypopp/vim-colors-plain.git'
 
 " Nord Theme
 Plugin 'https://github.com/arcticicestudio/nord-vim.git'
@@ -119,50 +88,22 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"==== Plugin Extras ====
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
-
 " Airline
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
-"PaperColor Highlight
-let g:PaperColor_Theme_Options = {
-  \   'language': {
-  \     'python': {
-  \       'highlight_builtins' : 1
-  \     },
-  \     'cpp': {
-  \       'highlight_standard_library': 1
-  \     },
-  \     'c': {
-  \       'highlight_builtins' : 1
-  \     }
-  \   }
-  \ }
-
-
-"==== Pick Colorscheme Options ====
-set background=dark
-"colorscheme palenight
-let g:palenight_terminal_italics=1
-let g:jellybeans_use_term_italics = 1
-let g:material_terminal_italics = 1
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" === Important, idk why ===
 set t_md=
 
 
 "==== numbering ====
 set number
-" set relativenumber
+set relativenumber
 
 "==== indent ====
 set smartindent
 set tabstop=4
 set shiftwidth=4
-autocmd FileType asm setlocal shiftwidth=8 tabstop=8
+" autocmd FileType asm setlocal shiftwidth=8 tabstop=8
 
 "==== Weird Backspace Bug Fix ====
 set backspace=indent,eol,start
@@ -181,18 +122,18 @@ set autochdir
 
 
 "==== Highlight current line ====
-set cursorline
+" set cursorline
 
 " === Highlight current line number ===
- hi clear CursorLine
- augroup CLClear
-     autocmd! ColorScheme * hi clear CursorLine
- augroup END
+ " hi clear CursorLine
+ " augroup CLClear
+ "     autocmd! ColorScheme * hi clear CursorLine
+ " augroup END
 
- hi CursorLineNR cterm=bold
- augroup CLNRSet
-     autocmd! ColorScheme * hi CursorLineNR cterm=bold
- augroup END
+ " hi CursorLineNR cterm=bold
+ " augroup CLNRSet
+ "     autocmd! ColorScheme * hi CursorLineNR cterm=bold
+ " augroup END
 
 " ==== make bg transparent ====
  " au ColorScheme * hi Normal ctermbg=none guibg=none
@@ -236,8 +177,6 @@ nmap <leader>5 :colorscheme hybrid<CR>
 nmap <leader>6 :colorscheme ayu<CR>
 nmap <leader>7 :colorscheme onedark<CR>
 nmap <leader>8 :colorscheme gruvbox<CR>
-nmap <leader>9 :colorscheme base16-grayscale-dark<CR>
-nmap <leader>( :colorscheme base16-grayscale-light<CR>
 nmap <leader>0 :syntax off<CR>
 nmap <leader>) :syntax on<CR>
 nmap <leader>j :m+<CR>
@@ -328,7 +267,7 @@ set listchars+=space:␣,tab:>-
 nmap <leader>/ :set list!<CR>
 
 "==== Status line ====
-set laststatus=2
+" set laststatus=2
 
 " === Line Wrapping ===
 set showbreak =>>
@@ -368,18 +307,12 @@ set wildmenu
 " let g:airline_theme='pencil'
 " let g:airline_theme='nord'
 
-let g:jellybeans_overrides = {
-\	'Function': {'guifg': '669cb0'}
-\}
-
 "==== Colorscheme ====
-" let g:material_theme_style = 'dark'
-set background=dark
-" let ayucolor="dark"
-" let g:gruvbox_contrast_dark = 'hard'
-colorscheme night-owl
+" set background=dark
+colorscheme hybrid
+
 
 " ==== Use terminal colors ====
-" hi! Normal ctermbg=NONE guibg=NONE
-" hi! NonText ctermbg=NONE guibg=NONE
-" hi! LineNr guibg=NONE ctermbg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+hi! LineNr guibg=NONE ctermbg=NONE
