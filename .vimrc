@@ -74,6 +74,9 @@ Plugin 'https://github.com/haishanh/night-owl.vim.git'
 " Nord Theme
 Plugin 'https://github.com/arcticicestudio/nord-vim.git'
 
+" One dark
+Plugin 'https://github.com/rakr/vim-one.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -172,11 +175,9 @@ nmap <leader>- :set background=dark<CR>
 nmap <leader>1 :colorscheme OceanicNext<CR>
 nmap <leader>2 :colorscheme night-owl<CR>
 nmap <leader>3 :colorscheme rusticated<CR>
-nmap <leader>4 :colorscheme pencil<CR>
+nmap <leader>4 :colorscheme one<CR>
 nmap <leader>5 :colorscheme hybrid<CR>
-nmap <leader>6 :colorscheme ayu<CR>
-nmap <leader>7 :colorscheme onedark<CR>
-nmap <leader>8 :colorscheme gruvbox<CR>
+nmap <leader>6 :colorscheme gruvbox<CR>
 nmap <leader>0 :syntax off<CR>
 nmap <leader>) :syntax on<CR>
 nmap <leader>j :m+<CR>
@@ -309,7 +310,7 @@ set wildmenu
 
 "==== Colorscheme ====
 " set background=dark
-colorscheme hybrid
+colorscheme one
 
 
 " ==== Use terminal colors ====
