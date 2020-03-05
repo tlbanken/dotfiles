@@ -19,8 +19,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
-" Auto Completion with deoplete
-"Plugin 'https://github.com/Shougo/deoplete.nvim.git'
 
 " Airline
 " Plugin 'https://github.com/vim-airline/vim-airline.git'
@@ -100,7 +98,7 @@ set t_md=
 
 "==== numbering ====
 set number
-set relativenumber
+" set relativenumber
 
 "==== indent ====
 set smartindent
@@ -269,6 +267,7 @@ nmap <leader>/ :set list!<CR>
 
 "==== Status line ====
 " set laststatus=2
+set ruler
 
 " === Line Wrapping ===
 set showbreak =>>
