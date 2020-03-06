@@ -75,6 +75,9 @@ Plugin 'https://github.com/arcticicestudio/nord-vim.git'
 " One dark
 Plugin 'https://github.com/rakr/vim-one.git'
 
+" One monokai
+Plugin 'https://github.com/fratajczak/one-monokai-vim.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -229,6 +232,9 @@ nmap <leader>] :TagbarToggle<CR>
 " === File Explore ===
 :nnoremap <leader>e :Explore!<CR>
 
+" === Echo Current File Name ===
+nmap <leader>n :echo @%<CR>
+
 " === Clipboard ===
 set clipboard=unnamedplus
 
@@ -258,8 +264,8 @@ endfunction
 
 " === Cursor Shape ===
 " NOTE: This only works for konsole
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " === Whitespace ===
 set listchars+=space:␣,tab:>-
