@@ -39,7 +39,7 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/farmergreg/vim-lastplace.git'
 
 " Git Gutter
-Plugin 'https://github.com/airblade/vim-gitgutter.git'
+" Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
 " Sleuth.vim for auto tab/space recognition
 Plugin 'https://github.com/tpope/vim-sleuth.git'
@@ -77,6 +77,9 @@ Plugin 'https://github.com/rakr/vim-one.git'
 
 " One monokai
 Plugin 'https://github.com/fratajczak/one-monokai-vim.git'
+
+" Paper Color
+Plugin 'https://github.com/NLKNguyen/papercolor-theme.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -157,7 +160,11 @@ syntax enable
 if(has("termguicolors"))
 	set termguicolors
 endif
-
+if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 
 "==== Java Function highlighting ====
 let java_highlight_functions = 1
@@ -263,9 +270,9 @@ function! QuickHide()
 endfunction
 
 " === Cursor Shape ===
-" let &t_SI = "\<Esc>[6 q"
-" let &t_SR = "\<Esc>[4 q"
-" let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " === Whitespace ===
 set listchars+=space:␣,tab:>-
@@ -306,15 +313,8 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
-
-"==== Airline Theme ====
-" let g:airline_theme='onedark'
-" let g:airline_theme='rusticated'
-" let g:airline_theme='pencil'
-" let g:airline_theme='nord'
-
 "==== Colorscheme ====
-" set background=dark
+set background=dark
 colorscheme one
 
 
@@ -322,3 +322,4 @@ colorscheme one
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr guibg=NONE ctermbg=NONE
+hi! SignColumn guibg=NONE ctermbg=NONE
