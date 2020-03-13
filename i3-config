@@ -168,7 +168,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        status_command i3blocks
 }
 
 # Window Tweaks
@@ -182,10 +182,10 @@ focus_follows_mouse no
 
 
 # Compton start
-exec --no-startup-id compton
+exec --no-startup-id compton --fading --fade-delta=2
 
 # Wallpaper
-exec --no-startup-id "feh --bg-fill ~/Pictures/Wallpapers/i3nature.jpg"
+exec_always --no-startup-id "feh --bg-fill ~/Pictures/Wallpapers/i3nature.jpg"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
