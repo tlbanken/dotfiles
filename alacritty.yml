@@ -6,7 +6,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-# env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -14,6 +14,7 @@
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   # TERM: alacritty
+  TERM: 'xterm-256color'
 #==============================================================================
 
 #==============================================================================
@@ -256,6 +257,10 @@ schemes:
 
   # Colors (Nord)
   nord: &nord
+     # Cursor
+     cursor:
+       cursor: '#ff03b7'
+
      # Default colors
      primary:
        background: '#2E3440'
@@ -285,6 +290,10 @@ schemes:
 
   # Colors (One Dark)
   one_dark: &one_dark
+    # Cursor
+    cursor:
+     cursor: '#ff03b7'
+
     # Default colors
     primary:
       background: '#282c34'
@@ -413,6 +422,7 @@ dynamic_title: true
 #==============================================================================
 # Cursor
 #==============================================================================
+custom_cursor_colors: true
 cursor:
   # Cursor style
   #
@@ -420,7 +430,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Underline
 #==============================================================================
 
   # If this is `true`, the cursor will be rendered as a hollow box when the

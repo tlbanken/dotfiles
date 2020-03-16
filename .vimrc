@@ -158,16 +158,15 @@ syntax enable
 "endif
 
 if(has("termguicolors"))
-	set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
 if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
-
-"==== Java Function highlighting ====
-let java_highlight_functions = 1
 
 "==== Set up Leader key ====
 let mapleader = "\<Space>"
@@ -306,6 +305,7 @@ set backupdir^=~/tmp,/tmp
 
 "==== Mouse Support ====
 set mouse=a
+set ttymouse=sgr
 
 "==== Misc ====
 filetype plugin on
