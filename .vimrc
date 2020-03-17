@@ -104,7 +104,7 @@ set t_md=
 
 "==== numbering ====
 set number
-" set relativenumber
+set relativenumber
 
 "==== indent ====
 set smartindent

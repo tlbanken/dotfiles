@@ -34,7 +34,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+BackSpace kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -217,7 +217,7 @@ mode "move" {
 #         position top
 #         status_command i3status
 # }
-exec_always --no-startup-id polybar example
+exec --no-startup-id polybar mainbar
 
 # Window Tweaks
 # border pixel 20
@@ -245,16 +245,19 @@ exec --no-startup-id "udiskie -n"
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Alsa Audio Controls
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5dB+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5dB- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle # mute Mic
+
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
+exec --no-startup-id redshift
 
 # GAPS
 gaps inner 10

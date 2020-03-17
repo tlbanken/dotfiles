@@ -1,7 +1,8 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
 {
 	"always_show_minimap_viewport": true,
 	"caret_style": "blink",
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"font_face": "Source Code Pro Medium",
 	"font_size": 12,
 	"highlight_line": false,
@@ -17,5 +18,4 @@
 	],
 	"tab_completion": false,
 	"theme": "Adaptive.sublime-theme",
-	"inverse_caret_state": true,
 }
