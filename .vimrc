@@ -27,7 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
 " Better syntax highlighting
-" Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
+Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
 " Easy commenting commands
 Plugin 'https://github.com/tpope/vim-commentary.git'
@@ -315,7 +315,7 @@ set wildmenu
 
 "==== Colorscheme ====
 set background=dark
-colorscheme one
+colorscheme nord
 
 
 " ==== Use terminal colors ====

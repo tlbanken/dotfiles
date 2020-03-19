@@ -85,7 +85,7 @@ unsigned int tabspaces = 8;
 
 // *** COLOR SCHEMES ***
 // Nord
-#define nord_nblk "#3B4252"
+#define nord_nblk "#2e3440"
 #define nord_nred "#BF616A"
 #define nord_ngrn "#A3BE8C"
 #define nord_nylw "#EBCB8B"
