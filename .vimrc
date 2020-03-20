@@ -314,8 +314,8 @@ set showcmd
 set wildmenu
 
 "==== Colorscheme ====
-set background=dark
-colorscheme nord
+" set background=dark
+colorscheme one_monokai
 
 
 " ==== Use terminal colors ====
