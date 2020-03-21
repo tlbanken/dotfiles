@@ -315,11 +315,11 @@ set wildmenu
 
 "==== Colorscheme ====
 " set background=dark
-colorscheme one_monokai
+colorscheme night-owl
 
 
 " ==== Use terminal colors ====
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-hi! LineNr guibg=NONE ctermbg=NONE
-hi! SignColumn guibg=NONE ctermbg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
+" hi! LineNr guibg=NONE ctermbg=NONE
+" hi! SignColumn guibg=NONE ctermbg=NONE
