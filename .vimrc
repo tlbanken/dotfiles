@@ -75,11 +75,11 @@ Plugin 'https://github.com/arcticicestudio/nord-vim.git'
 " One dark
 Plugin 'https://github.com/rakr/vim-one.git'
 
-" One monokai
-Plugin 'https://github.com/fratajczak/one-monokai-vim.git'
-
 " Paper Color
 Plugin 'https://github.com/NLKNguyen/papercolor-theme.git'
+
+" Ayu
+Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -315,7 +315,8 @@ set wildmenu
 
 "==== Colorscheme ====
 " set background=dark
-colorscheme night-owl
+let ayucolor="dark"
+colorscheme ayu
 
 
 " ==== Use terminal colors ====
@@ -323,3 +324,5 @@ colorscheme night-owl
 " hi! NonText ctermbg=NONE guibg=NONE
 " hi! LineNr guibg=NONE ctermbg=NONE
 " hi! SignColumn guibg=NONE ctermbg=NONE
+" hi! NonText guibg=NONE ctermbg=NONE
+" hi! EndOfBuffer guibg=NONE ctermbg=NONE
