@@ -316,6 +316,9 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
+"==== Colorscheme Options ====
+let g:dracula_italic = 0
+
 "==== Colorscheme ====
 set background=dark
 colorscheme dracula
