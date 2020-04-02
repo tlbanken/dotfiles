@@ -81,6 +81,9 @@ Plugin 'https://github.com/NLKNguyen/papercolor-theme.git'
 " Ayu
 Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 
+" Dracula
+Plugin 'dracula/vim', { 'name': 'dracula'}
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -314,9 +317,8 @@ set showcmd
 set wildmenu
 
 "==== Colorscheme ====
-" set background=dark
-let ayucolor="dark"
-colorscheme ayu
+set background=dark
+colorscheme dracula
 
 
 " ==== Use terminal colors ====
