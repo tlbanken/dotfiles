@@ -38,8 +38,8 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 " Remember last line edited
 Plugin 'https://github.com/farmergreg/vim-lastplace.git'
 
-" Git Gutter
-" Plugin 'https://github.com/airblade/vim-gitgutter.git'
+" Goyo Distraction free mode
+Plugin 'https://github.com/junegunn/goyo.vim.git'
 
 " Sleuth.vim for auto tab/space recognition
 Plugin 'https://github.com/tpope/vim-sleuth.git'
@@ -124,6 +124,9 @@ set noswapfile
 
 "=== Auto set wrk dir to curr dir
 set autochdir
+
+"=== Goyo Settings ===
+let g:goyo_linenr="1"
 
 "==== column marker ====
 " set colorcolumn=80
