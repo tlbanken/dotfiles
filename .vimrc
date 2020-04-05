@@ -127,6 +127,7 @@ set autochdir
 
 "=== Goyo Settings ===
 let g:goyo_linenr="1"
+let g:goyo_height="95%"
 
 "==== column marker ====
 " set colorcolumn=80
@@ -246,6 +247,19 @@ nmap <leader>] :TagbarToggle<CR>
 
 " === Echo Current File Name ===
 nmap <leader>n :echo @%<CR>
+
+" === Start Goyo ===
+let g:toggle_goyo_off = 1
+function! ToggleGoyo()
+  if g:toggle_goyo_off
+    Goyo
+    let g:toggle_goyo_off = 0
+  else
+    Goyo!
+    let g:toggle_goyo_off = 1
+  endif
+endfunction
+nmap <leader>gy :call ToggleGoyo()<CR>
 
 " === Clipboard ===
 set clipboard=unnamedplus
