@@ -338,7 +338,8 @@ let g:dracula_italic = 0
 
 "==== Colorscheme ====
 set background=dark
-colorscheme dracula
+" colorscheme dracula
+syntax off
 
 
 " ==== Use terminal colors ====
