@@ -84,6 +84,9 @@ Plugin 'https://github.com/ayu-theme/ayu-vim.git'
 " Dracula
 Plugin 'dracula/vim', { 'name': 'dracula'}
 
+" Two-Firewatch
+Plugin 'https://github.com/rakr/vim-two-firewatch.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -338,8 +341,8 @@ let g:dracula_italic = 0
 
 "==== Colorscheme ====
 set background=dark
-" colorscheme dracula
-syntax off
+colorscheme two-firewatch
+" syntax off
 
 
 " ==== Use terminal colors ====
