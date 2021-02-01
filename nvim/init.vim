@@ -1,9 +1,8 @@
-"====================================
-"  \    / (")   /\  /\   [][][] [][]                
-"   \  /   |   /  \/  \  []  [] []          
-"    \/    |  /        \ []     [][]       
-"====================================
-
+"=========================================
+" (\  | \    / (")   /\  /\   [][][] [][]                
+" | \ |  \  /   |   /  \/  \  []  [] []          
+" |  \)   \/    |  /        \ []     [][]       
+"=========================================
 
 "==== PLUGINS FROM VUNDLE ====
 set nocompatible              " be iMproved, required
@@ -19,30 +18,35 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
+" CoC (LSP autocomplete)
+Plugin 'https://github.com/neoclide/coc.nvim.git'
+
+" GitGutter
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
 " Airline
-" Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plugin 'https://github.com/vim-airline/vim-airline.git'
 
 " Auto Close {} w/ Auto Pairs
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
 " Better syntax highlighting
-Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
+" Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
 " Easy commenting commands
 Plugin 'https://github.com/tpope/vim-commentary.git'
 
 " Ctrl-P fuzzy finder
-Plugin 'https://github.com/kien/ctrlp.vim.git'
+"Plugin 'https://github.com/kien/ctrlp.vim.git'
+
+" fzf Fuzzy Finder
+Plugin 'https://github.com/junegunn/fzf.vim.git'
 
 " Remember last line edited
 Plugin 'https://github.com/farmergreg/vim-lastplace.git'
 
-" Goyo Distraction free mode
-Plugin 'https://github.com/junegunn/goyo.vim.git'
-
 " Sleuth.vim for auto tab/space recognition
-Plugin 'https://github.com/tpope/vim-sleuth.git'
+" Plugin 'https://github.com/tpope/vim-sleuth.git'
 
 " Tagbar
 Plugin 'https://github.com/majutsushi/tagbar.git'
@@ -56,6 +60,9 @@ Plugin 'https://github.com/nightsense/snow.git'
 
 " Oceanic Next Theme
 Plugin 'https://github.com/mhartington/oceanic-next.git'
+
+" Material Theme
+Plugin 'https://github.com/kaicataldo/material.vim.git'
 
 " Gruvbox Theme
 Plugin 'https://github.com/morhetz/gruvbox.git'
@@ -87,6 +94,9 @@ Plugin 'dracula/vim', { 'name': 'dracula'}
 " Two-Firewatch
 Plugin 'https://github.com/rakr/vim-two-firewatch.git'
 
+" Sonokai
+Plugin 'https://github.com/sainnhe/sonokai.git'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -101,12 +111,55 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Airline
-" let g:airline#extensions#tabline#enabled = 1
+"==== Set up Leader key ====
+let mapleader = "\<Space>"
+
+" === CoC Needed Config ==========================================
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" Popup window size
+set pumheight=5
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" jump to definition
+nnoremap <leader>cg :call CocAction('jumpDefinition')<CR>
+
+" Show definition
+nnoremap <leader>cd :call CocAction('showSignatureHelp')<CR>
+
+
+"============================================================
+
+"=== Airline Config ===
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_c = '%{strftime("%m/%d/%y %H:%M")} %{getcwd()}'
+let g:airline#extensions#whitespace#checks = []
+
 
 " === Important, idk why ===
 set t_md=
-
 
 "==== numbering ====
 set number
@@ -116,6 +169,7 @@ set relativenumber
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
 " autocmd FileType asm setlocal shiftwidth=8 tabstop=8
 
 "==== Weird Backspace Bug Fix ====
@@ -125,98 +179,35 @@ set backspace=indent,eol,start
 set autoread
 set noswapfile
 
-"=== Auto set wrk dir to curr dir
-set autochdir
-
-"=== Goyo Settings ===
-let g:goyo_linenr="1"
-let g:goyo_height="95%"
-
-"==== column marker ====
-" set colorcolumn=80
-" highlight ColorColumn guibg=black
-"let &colorcolumn="80,".join(range(81,999),",")
-
+"==== Use Terminal Cursor ====
+"set guicursor=
 
 "==== Highlight current line ====
-" set cursorline
+set cursorline
 
 " === Highlight current line number ===
- " hi clear CursorLine
- " augroup CLClear
- "     autocmd! ColorScheme * hi clear CursorLine
- " augroup END
+hi clear CursorLine
+augroup CLClear
+   autocmd! ColorScheme * hi clear CursorLine
+augroup END
 
- " hi CursorLineNR cterm=bold
- " augroup CLNRSet
- "     autocmd! ColorScheme * hi CursorLineNR cterm=bold
- " augroup END
-
-" ==== make bg transparent ====
- " au ColorScheme * hi Normal ctermbg=none guibg=none
- " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
- " hi! Normal ctermbg=NONE guibg=NONE
- " hi! NonText ctermbg=NONE guibg=NONE
+hi CursorLineNR cterm=bold
+augroup CLNRSet
+   autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
 
 "==== set color config ====
 syntax on
 syntax enable
 
-"if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"endif
-
-if(has("termguicolors"))
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-
-"==== Set up Leader key ====
-let mapleader = "\<Space>"
-
 
 "==== Simple Leader Key Remaps ====
 nmap <leader>s :noh<CR>
 nmap <leader>w :w<CR>
-nmap <leader>h 0
-nmap <leader>l $
-nmap <leader>= :set background=light<CR>
-nmap <leader>- :set background=dark<CR>
-nmap <leader>1 :colorscheme OceanicNext<CR>
-nmap <leader>2 :colorscheme night-owl<CR>
-nmap <leader>3 :colorscheme rusticated<CR>
-nmap <leader>4 :colorscheme one<CR>
-nmap <leader>5 :colorscheme hybrid<CR>
-nmap <leader>6 :colorscheme gruvbox<CR>
-nmap <leader>0 :syntax off<CR>
-nmap <leader>) :syntax on<CR>
-nmap <leader>j :m+<CR>
-nmap <leader>k :m-2<CR>
-
 
 " Move by screen lines rather than true lines
 :noremap j gj
 :noremap k gk
-
-
-" ==== Fix Alt-key ====
-if !has('nvim')
-  let c='a'
-  while c <= 'z'
-    exec "set <A-".c.">=\e".c
-    exec "imap \e".c." <A-".c.">"
-    let c = nr2char(1+char2nr(c))
-  endw
-
-  set timeout ttimeoutlen=50
-endif
 
 "==== Other key remaps ====
 " Remap window change switching
@@ -230,6 +221,9 @@ nmap <silent> <A-l> :wincmd l<CR>
 :nnoremap <leader>bd :bdelete<CR>
 
 :nnoremap <leader>v :vsplit<CR>
+
+"=== Open Scratch Window ===
+nmap <silent> <leader>S :call nvim_create_buf(1,1)<CR>
 
 "==== ctrl-p ====
 let g:ctrlp_map = '<c-p>'
@@ -251,84 +245,30 @@ nmap <leader>] :TagbarToggle<CR>
 " === Echo Current File Name ===
 nmap <leader>n :echo @%<CR>
 
-" === Start Goyo ===
-let g:toggle_goyo_off = 1
-function! ToggleGoyo()
-  if g:toggle_goyo_off
-    Goyo
-    let g:toggle_goyo_off = 0
-  else
-    Goyo!
-    let g:toggle_goyo_off = 1
-  endif
-endfunction
-nmap <leader>gy :call ToggleGoyo()<CR>
-
 " === Clipboard ===
 set clipboard=unnamedplus
-
-" === Terminal ===
-if has('terminal')
-  :nnoremap <leader>t :bot ter ++rows=15<CR>
-  tnoremap <F1> <C-W>N
-endif
-
-" === Auto hide Terminal ===
-:nmap <C-j> :call QuickHide()<CR>
-:tmap <C-j> <C-W>:call QuickHide()<CR>
-let g:quick_hidden = 0
-function! QuickHide()
-  if g:quick_hidden
-    unhide
-    let g:quick_hidden = 0
-    " switch to terminal window on opening
-    execute g:quickhide_return_to_window . "wincmd w"
-  else
-    " remember terminal window
-    let g:quickhide_return_to_window = winnr()
-    hide
-    let g:quick_hidden = 1
-  endif
-endfunction
-
-" === Cursor Shape ===
-" let &t_SI = "\<Esc>[6 q"
-" let &t_SR = "\<Esc>[4 q"
-" let &t_EI = "\<Esc>[2 q"
 
 " === Whitespace ===
 set listchars+=space:␣,tab:>-
 nmap <leader>/ :set list!<CR>
-
-"==== Status line ====
-" set laststatus=2
-set ruler
 
 " === Line Wrapping ===
 set showbreak =>>
 
 "==== Search ====
 set smartcase
-set incsearch
-set hlsearch
 
 "==== Folds ====
 set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-
-"==== Basic Auto Complete ====
-set complete=.,w,b,u,t,i
-set showcmd
-
-"==== Backup files to tmp ====
-set backupdir-=.
-set backupdir^=~/tmp,/tmp
+set incsearch
+set hlsearch
 
 "==== Mouse Support ====
 set mouse=a
-set ttymouse=sgr
+" set ttymouse=sgr
 
 "==== Misc ====
 filetype plugin on
@@ -336,19 +276,9 @@ set encoding=utf8
 set showcmd
 set wildmenu
 
-"==== Colorscheme Options ====
-let g:dracula_italic = 0
+"==== Colorscheme Settings ====
+set termguicolors
 
 "==== Colorscheme ====
 set background=dark
-colorscheme two-firewatch
-" syntax off
-
-
-" ==== Use terminal colors ====
-" hi! Normal ctermbg=NONE guibg=NONE
-" hi! NonText ctermbg=NONE guibg=NONE
-" hi! LineNr guibg=NONE ctermbg=NONE
-" hi! SignColumn guibg=NONE ctermbg=NONE
-" hi! NonText guibg=NONE ctermbg=NONE
-" hi! EndOfBuffer guibg=NONE ctermbg=NONE
+colorscheme one
