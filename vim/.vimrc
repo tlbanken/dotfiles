@@ -32,8 +32,8 @@ Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 " Easy commenting commands
 Plugin 'https://github.com/tpope/vim-commentary.git'
 
-" Ctrl-P fuzzy finder
-Plugin 'https://github.com/kien/ctrlp.vim.git'
+" FZF
+Plugin 'https://github.com/junegunn/fzf.vim.git'
 
 " Remember last line edited
 Plugin 'https://github.com/farmergreg/vim-lastplace.git'
@@ -140,24 +140,18 @@ let g:goyo_height="95%"
 
 
 "==== Highlight current line ====
-set cursorline
+" set cursorline
 
 " === Highlight current line number ===
-hi clear CursorLine
-augroup CLClear
-   autocmd! ColorScheme * hi clear CursorLine
-augroup END
+" hi clear CursorLine
+" augroup CLClear
+"    autocmd! ColorScheme * hi clear CursorLine
+" augroup END
 
-hi CursorLineNR cterm=bold
-augroup CLNRSet
-   autocmd! ColorScheme * hi CursorLineNR cterm=bold
-augroup END
-
-" ==== make bg transparent ====
- " au ColorScheme * hi Normal ctermbg=none guibg=none
- " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
- " hi! Normal ctermbg=NONE guibg=NONE
- " hi! NonText ctermbg=NONE guibg=NONE
+" hi CursorLineNR cterm=bold
+" augroup CLNRSet
+"    autocmd! ColorScheme * hi CursorLineNR cterm=bold
+" augroup END
 
 "==== set color config ====
 syntax on
@@ -168,16 +162,16 @@ syntax enable
 "  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "endif
 
-if(has("termguicolors"))
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
+" if(has("termguicolors"))
+"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"     set termguicolors
+" endif
+" if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
+"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"     set termguicolors
+" endif
 
 "==== Set up Leader key ====
 let mapleader = "\<Space>"
@@ -231,11 +225,6 @@ nmap <silent> <A-l> :wincmd l<CR>
 :nnoremap <leader>bd :bdelete<CR>
 
 :nnoremap <leader>v :vsplit<CR>
-
-"==== ctrl-p ====
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
 
 "==== Tagbar ====
 nmap <leader>] :TagbarToggle<CR>
@@ -345,7 +334,7 @@ let g:sonokai_disable_italic_comment = 1
 
 "==== Colorscheme ====
 set background=dark
-colorscheme one
+" colorscheme one
 " syntax off
 
 
