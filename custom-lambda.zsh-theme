@@ -2,7 +2,11 @@
 # These themes can be found off the on my zsh repo in themes and external themes
 
 # lambda is red if error occurs, green otherwise
-local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ %s)"
+#local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ %s)"
+
+# show exit code if error occurs
+local last_rc=$?
+local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ[$last_rc] %s)"
 
 # if in git directory, will print local path, otherwise full path
 function get_pwd(){
@@ -19,6 +23,7 @@ function get_pwd(){
   fi
   echo $prompt_short_dir
 }
+
 
 # LAMBDA - user - [pwd]
 PROMPT='$ret_status%{$fg_bold[yellow]%}$USER %{$fg_bold[green]%}[%{$fg[blue]%}$(get_pwd)$(git_prompt_info)%{$reset_color%}%{$reset_color%}%{$fg_bold[green]%}] %{$reset_color%}%{$reset_color%}'
