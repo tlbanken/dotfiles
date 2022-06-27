@@ -255,7 +255,11 @@ endfunction
 nmap <leader>gy :call ToggleGoyo()<CR>
 
 " === Clipboard ===
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 
 " === Terminal ===
 if has('terminal')
@@ -334,7 +338,7 @@ let g:sonokai_disable_italic_comment = 1
 
 "==== Colorscheme ====
 set background=dark
-" colorscheme one
+colorscheme one
 " syntax off
 
 

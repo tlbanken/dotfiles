@@ -268,7 +268,7 @@ set hlsearch
 
 "==== Mouse Support ====
 set mouse=a
-" set ttymouse=sgr
+"set ttymouse=sgr
 
 "==== Misc ====
 filetype plugin on
@@ -277,7 +277,7 @@ set showcmd
 set wildmenu
 
 "==== Colorscheme Settings ====
-set termguicolors
+"set termguicolors
 
 "==== Colorscheme ====
 set background=dark
