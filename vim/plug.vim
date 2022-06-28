@@ -13,8 +13,10 @@ Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
 
-" Airline
-" Plugin 'https://github.com/vim-airline/vim-airline.git'
+if has('nvim')
+    " Airline
+    Plugin 'https://github.com/vim-airline/vim-airline.git'
+endif 
 
 " Auto Close {} w/ Auto Pairs
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
@@ -26,7 +28,10 @@ Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 
 " FZF
-Plugin 'https://github.com/junegunn/fzf.vim.git'
+" Plugin 'https://github.com/junegunn/fzf.vim.git'
+
+" CtrlP
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 
 " Remember last line edited
 Plugin 'https://github.com/farmergreg/vim-lastplace.git'

@@ -77,7 +77,9 @@ set backupdir^=~/tmp,/tmp
 
 "==== Mouse Support ====
 set mouse=a
-set ttymouse=sgr
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 
 "==== Misc ====

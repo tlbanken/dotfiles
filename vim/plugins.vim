@@ -17,3 +17,5 @@ function! ToggleGoyo()
 endfunction
 nmap <leader>gy :call ToggleGoyo()<CR>
 
+" CtrlP Shortcut
+nmap <leader>p :CtrlP<CR>
