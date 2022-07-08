@@ -100,3 +100,6 @@ if !has('nvim')
   set timeout ttimeoutlen=50
 endif
 
+" === Popup height ===
+set pumheight=8
+

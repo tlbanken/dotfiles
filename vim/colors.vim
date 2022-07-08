@@ -12,6 +12,12 @@ hi! SignColumn guibg=NONE ctermbg=NONE
 hi! NonText guibg=NONE ctermbg=NONE
 hi! EndOfBuffer guibg=NONE ctermbg=NONE
 
+" change popup window colors
+highlight Pmenu ctermbg=gray guibg=gray
+highlight PmenuSel ctermbg=lightgray guibg=lightgray
+highlight PmenuSbar ctermbg=255 guibg=255
+highlight PmenuThumb ctermbg=255 guibg=255
+
 
 "if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >

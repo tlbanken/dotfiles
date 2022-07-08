@@ -19,3 +19,9 @@ nmap <leader>gy :call ToggleGoyo()<CR>
 
 " CtrlP Shortcut
 nmap <leader>p :CtrlP<CR>
+
+
+" CoC mappings
+nmap <leader>o :CocCommand clangd.switchSourceHeader<CR>
+nmap <leader>i :CocCommand clangd.symbolInfo<CR>
+

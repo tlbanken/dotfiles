@@ -13,9 +13,12 @@ Plugin 'VundleVim/Vundle.vim'
 "*** PUT PLUGINS HERE ***
 
 
+" Plugins for neovim
 if has('nvim')
     " Airline
     Plugin 'https://github.com/vim-airline/vim-airline.git'
+    " CoC C completion (need to install clangd)
+    Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 endif 
 
 " Auto Close {} w/ Auto Pairs
